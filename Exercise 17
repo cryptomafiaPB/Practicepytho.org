@@ -1,0 +1,9 @@
+import requests
+from bs4 import BeautifulSoup
+
+u = input("Enter a URL of site: ")# enter New York Times site home page URL if u want answer as per Exercise 17  
+r = requests.get(u)
+t = r.text
+soup = BeautifulSoup(t,'html.parser')
+o = input("Enter Tag u wanna find in Page: ")#Enter 'h3' to get tittle headings of NYT site as to get answer of Exercise 17
+print(soup.find_all(o))
